@@ -219,8 +219,8 @@ kvdb_key_handle_t kvdb_sdk_list_key_start(kvdb_t *kvdb);
  * kvdb_sdk_list_key - list keys from the kvdb database
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
  * @h__: The key list handle. success return by:kvdb_sdk_list_key_start.
- * @key_list: The key length
- * @key_num: The key num [in]: max list num, [out]: success get keys num
+ * @key_list: The keys list. the sdk will alloc and free the pointer.
+ * @key_num: The key num [in]: max list num want to list. [out]: success get keys num
  * Eg.
  *  ......
  *      int i = 0;
