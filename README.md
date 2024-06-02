@@ -1,1 +1,1 @@
-# kvdb-dabase
+# kvdb-database
