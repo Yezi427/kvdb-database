@@ -132,10 +132,10 @@ int kvdb_sdk_list_users(kvdb_t *kvdb, kvdb_user_t **users, int *num);
 int kvdb_sdk_set_password(kvdb_t *kvdb, const char *user, const char *oldpassword, const char *newpassword);
 
 /**
- * kvdb_sdk_insert - insert key-vale from kvdb database server
+ * kvdb_sdk_insert - insert key-vale to kvdb database server
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
  * @user: The kvdb database user name.
- * @key: The key buffer of the isert key.
+ * @key: The key buffer of the insert key.
  * @key_len: The key length
  * @data: The value buffer of the insert data.
  * @data_len: The buffer length
