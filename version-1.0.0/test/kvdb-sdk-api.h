@@ -145,7 +145,7 @@ int kvdb_sdk_set_password(kvdb_t *kvdb, const char *user, const char *oldpasswor
 int kvdb_sdk_insert(kvdb_t *kvdb, const void *key, const int key_len, const void *data, const int data_len);
 
 /**
- * kvdb_sdk_update - update key-vale from kvdb database server if the key-value not existed it do the kvdb_sdk_insert
+ * kvdb_sdk_update - update key-vale to kvdb database server if the key-value not existed it do the kvdb_sdk_insert
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
  * @user: The kvdb database user name.
  * @key: The key buffer of the update key.
