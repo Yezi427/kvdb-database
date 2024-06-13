@@ -103,7 +103,7 @@ int kvdb_sdk_del_user(kvdb_t *kvdb, const char *user, const char *password);
 /**
  * kvdb_sdk_list_users - list user to kvdb database server only user admin has permission
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
- * @users: The kvdb database user name list. the sdk will alloc and free the pointer.
+ * @users: [out]: The kvdb database user name list. the sdk will alloc and free the pointer.
  * Eg.
  *      int err = -1;
  *      int num = 0;
@@ -114,7 +114,7 @@ int kvdb_sdk_del_user(kvdb_t *kvdb, const char *user, const char *password);
  *          fprintf(stderr, "list-user failed. status:(%s, err:%d)\n", kvdb_strerror(err), err);
  *      }
  * 
- * @num: The kvdb database user name list number.
+ * @num: [out]:The kvdb database user name list number.
  * @return:
  *         On success, 0 is returned. On error, error code is returned.
 */
@@ -146,7 +146,6 @@ int kvdb_sdk_insert(kvdb_t *kvdb, const void *key, const int key_len, const void
 /**
  * kvdb_sdk_update - update key-vale to kvdb database server if the key-value not existed it do the kvdb_sdk_insert
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
- * @user: The kvdb database user name.
  * @key: The key buffer of the update key.
  * @key_len: The key length
  * @data: The value buffer of the update data.
@@ -159,7 +158,6 @@ int kvdb_sdk_update(kvdb_t *kvdb, const void *key, const int key_len, const void
 /**
  * kvdb_sdk_read - read key-vale from kvdb database server
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
- * @user: The kvdb database user name.
  * @key: The key buffer of the read data.
  * @key_len: The key length
  * @buff: The value buffer of the read data.
@@ -195,7 +193,7 @@ int kvdb_sdk_insert_file(kvdb_t *kvdb, const void *key, const int key_len, const
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
  * @key: The key buffer of the data upload data.
  * @key_len: The key length
- * @fname: The insert file name, Eg. key:/home/test.txt fname:/home/test.txt 
+ * @fname: The output file name, Eg. key:/home/test.txt fname:/home/test.txt 
  * @return:
  *      On success, 0 is returned. On error, error code is returned.
 */
@@ -218,7 +216,7 @@ kvdb_key_handle_t kvdb_sdk_list_key_start(kvdb_t *kvdb);
  * kvdb_sdk_list_key - list keys from the kvdb database
  * @kvdb: The kvdb database client handle. success return by: kvdb_sdk_init.
  * @h__: The key list handle. success return by:kvdb_sdk_list_key_start.
- * @key_list: The keys list. the sdk will alloc and free the pointer.
+ * @key_list: [out]: The keys list. the sdk will alloc and free the pointer.
  * @key_num: The key num [in]: max list num want to list. [out]: success get keys num
  * Eg.
  *  ......
